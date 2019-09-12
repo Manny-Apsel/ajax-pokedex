@@ -14,91 +14,66 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-12 col-sm-6 col-md-8">
-                <div class="col-sm-9">
-                    <div id="dex">
-                        <h1>Pokédex </h1>
-                    </div>
-
-                    <form action="#" method="post">
+    <div class="container bg-light">
+        <section id="dex" class="row d-flex flex-column bg-light">
+            <h1 class="text-center pt-5 pt-4">Pokédex</h1>
+            <section class="p-4">
+                <form action="#" method="post">
+                    <div class="d-flex justify-content-center">
                         <div class="field">
                             <label for="input"></label>
-                            <input id="input" name="poke-id" type="text"/>
+                            <input id="input" name="poke-id" type="text" placeholder="Name / ID">
                             <button id="go" type="button">Go</button>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div>
+                </form>
+            </section>
+        </section>
 
+        <section class="row container d-flex flex-column m-auto">
+            <h2 class="text-center">Pokémon</h2>
+            <p id="ID-name"></p>
+            <p id="pokemonId"></p>
+        </section>
 
-
-    <div class="row">
-        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
-        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
-    </div>
-    </div>
-
-
-
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9">
-                <h2>Pokémon</h2>
-                <p id="ID-name"></p>
-                <p id="pokemonId"></p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-8 col-sm-6">
+        <div class="row p-2">
+            <section class="day col-12 col-md-6 pb-5">
+                <h2 class="text-center">Images</h2>
                 <div class=" left">
                     <img alt="" id="back" src="">
                     <img alt="" id="front" src="">
                 </div>
-            </div>
-        </div>
-        <div class="row">
+            </section>
 
-            <div class="col-4 col-sm-6">
-                <div id="right">
-                    <h2>Moves</h2>
-                    <P class="moves"> ... </P>
-                    <P class="moves"> ... </P>
-                    <P class="moves"> ... </P>
-                    <P class="moves"> ... </P>
+            <section class="day col-12 col-md-6 pb-5">
+                <h2 class="text-center">Moves</h2>
+                <ul class="list-unstyled text-center">
+                    <li class="moves"> ... </li>
+                    <li class="moves"> ... </li>
+                    <li class="moves"> ... </li>
+                    <li class="moves"> ... </li>
+                </ul>
+            </section>
+
+            <section class="row container d-flex flex-column m-auto">
+                <div class="text-center">
+                    <div class=evolution>
+                        <button id="prevev">Previous</br>Evolution</button>
+                        <button id="nextev">Next</br>Evolution</button>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="row container d-flex flex-column m-auto">
+                <div class="text-center">
+                    <div class=morepokemon>
+                        <button id="prevmon">Previous</br>Pokémon</button>
+                        <button id="nextmon">Next</br>Pokémon</button>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-8 col-sm-6">
-                <div class=evolution>
-                    <button id="prevev">Previous</br>Evolution</button>
-                    <button id="nextev">Next</br>Evolution</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-8 col-sm-6">
-                <div class=evolution>
-                    <button id="prevmon">Previous</br>Pokémon</button>
-                    <button id="nextmon">Next</br>Pokémon</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <script src="script.js"></script>
 </body>
