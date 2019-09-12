@@ -2,9 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pokédex</title>
+    <link href="style.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
 </head>
 <body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div id="dex">
+                    <h1>Pokédex </h1>
+                </div>
+            </div>
+
+
+            <div class="col-sm-9">
+                <form action="#" method="post">
+                    <div class="field">
+                        <label for="input"></label>
+                        <input id="input" name="poke-id" type="text"/>
+                        <button id="go" type="button">Go</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2 class="ID-name">Pokémon</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8 col-sm-6">
+                <div class=" left">
+                    <img alt="pokeback" id="back" src="images/back.png">
+                    <img alt="pokeback" id="front" src="images/front.png">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-4 col-sm-6">
+                <div id="right">
+                    <h2>Moves</h2>
+                    <P> ... </P>
+                    <P> ... </P>
+                    <P> ... </P>
+                    <P> ... </P>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8 col-sm-6">
+                <div class=evolution>
+                    <button id="prevev">Previous</br>Evolution</button>
+                    <button id="nextev">Next</br>Evolution</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8 col-sm-6">
+                <div class=evolution>
+                    <button id="prevmon">Previous</br>Pokémon</button>
+                    <button id="nextmon">Next</br>Pokémon</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>

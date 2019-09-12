@@ -1,0 +1,86 @@
+h1 {
+    font-size: 50px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: yellow;
+
+}
+
+h2 {
+    padding-top: 20px;
+    font-size: 35px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: yellow;}#left {
+    font-family: 'Racing Sans One', cursive;
+}
+
+img {
+    width: 25%;
+    height: auto;
+}
+
+#dex {
+    padding-top: 50px;
+}
+
+#go {
+    min-width: 50px;
+    border-radius: 8px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+#prevev {
+    min-width: 100px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 15px;
+}
+
+#nextev {
+    min-width: 100px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 15px;
+}
+
+#prevmon {
+    min-width: 150px;
+    border-radius: 8px;
+    background-color: #E84C3D;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 18px;
+}
+
+#nextmon {
+    min-width: 150px;
+    border-radius: 8px;
+    background-color: #E84C3D;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 18px;
+}
