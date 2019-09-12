@@ -1,5 +1,5 @@
 h1 {
-    font-size: 50px;
+    font-size: 55px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
     color: yellow;
@@ -7,7 +7,7 @@ h1 {
 }
 
 h2 {
-    padding-top: 20px;
+    padding-top: 45px;
     font-size: 35px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
@@ -16,8 +16,14 @@ h2 {
 }
 
 img {
-    width: 25%;
+    width: 30%;
     height: auto;
+}
+
+.moves {
+    font-size: 25px;
+    font-family: 'Scheherazade', serif;
+    color: darkslategrey;
 }
 
 #dex {
@@ -33,8 +39,7 @@ img {
     color: yellow;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
-    font-size: 16px;
-
+    font-size: 20px;
 }
 
 #prevev {
@@ -83,4 +88,15 @@ img {
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 18px;
+}
+
+#ID-name {
+    font-size: 30px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: cornflowerblue;
+}
+
+#pokemonId {
+
 }

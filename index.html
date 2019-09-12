@@ -3,50 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokédex</title>
-    <link href="style.css" rel="stylesheet">
 
+    <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Scheherazade&display=swap" rel="stylesheet">
+
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 
 </head>
 <body>
 
-
     <div class="container">
-        <div class="row">
-            <div class="col-sm-9">
-                <div id="dex">
-                    <h1>Pokédex </h1>
-                </div>
-            </div>
-
-
-            <div class="col-sm-9">
-                <form action="#" method="post">
-                    <div class="field">
-                        <label for="input"></label>
-                        <input id="input" name="poke-id" type="text"/>
-                        <button id="go" type="button">Go</button>
+        <div class="row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8">
+                <div class="col-sm-9">
+                    <div id="dex">
+                        <h1>Pokédex </h1>
                     </div>
-                </form>
+
+                    <form action="#" method="post">
+                        <div class="field">
+                            <label for="input"></label>
+                            <input id="input" name="poke-id" type="text"/>
+                            <button id="go" type="button">Go</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+        <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">.col-sm-6 .col-md-5 .offset-md-2 .col-lg-6 .offset-lg-0</div>
+    </div>
+    </div>
+
+
+
+
 
     <div class="container">
         <div class="row">
             <div class="col-sm-9">
                 <h2>Pokémon</h2>
                 <p id="ID-name"></p>
+                <p id="pokemonId"></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-8 col-sm-6">
                 <div class=" left">
-                    <img alt="pokeback" id="back" src="">
-                    <img alt="pokeback" id="front" src="">
+                    <img alt="" id="back" src="">
+                    <img alt="" id="front" src="">
                 </div>
             </div>
         </div>
@@ -87,6 +100,6 @@
     </div>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
