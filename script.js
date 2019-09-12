@@ -22,20 +22,21 @@ function returnUrlBasedOnIdOrName(input) {
     }
     return url;
 }
-function chooseFourMoves(arrayAllMoves){
+
+function chooseFourMoves(arrayAllMoves) {
     var arrayFourMoves = [];
     var moveNumber = [];
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 4; i++) {
         let boolCheckNumber;
         do {
             boolCheckNumber = true;
             var randomNumber = Math.floor(Math.random() * arrayAllMoves.length);
             moveNumber.forEach(function (number) {
-                if (parseInt(number) === randomNumber){
+                if (parseInt(number) === randomNumber) {
                     boolCheckNumber = false;
                 }
             })
-        }while (boolCheckNumber === false);
+        } while (boolCheckNumber === false);
 
         arrayFourMoves.push(arrayAllMoves[randomNumber]);
         moveNumber.push(randomNumber);
@@ -46,12 +47,12 @@ function chooseFourMoves(arrayAllMoves){
 function getNamesMovesArray(arrayMoves) {
     var names = [];
     arrayMoves.forEach(function (move) {
-        names.push(move.name);
+        names.push(move.move.name);
     });
     return names;
 }
 
-function fetchSpecies(url){
+function fetchSpecies(url) {
     fetch(url)
         .then(function (response) {
             return response.json()
@@ -61,10 +62,11 @@ function fetchSpecies(url){
             let urlEvolutionChain = data.evolution_chain.url;
             document.getElementById("button1").addEventListener("click", function () {
                 fetchEvolutionChain(urlEvolutionChain);
-            })})
+            })
+        })
 }
 
-function fetchEvolutionChain(url){
+function fetchEvolutionChain(url) {
     fetch(url)
         .then(function (response) {
             return response.json();
@@ -74,7 +76,7 @@ function fetchEvolutionChain(url){
         })
 }
 
-let urlPokemon = "https://pokeapi.co/api/v2/pokemon/1/";
+let urlPokemon = "https://pokeapi.co/api/v2/pokemon/532/";
 
 
 fetch(urlPokemon)
@@ -85,12 +87,26 @@ fetch(urlPokemon)
         console.log(data);
         var pokemonId = data.id;
         var pokemonName = data.name;
+        document.getElementById("ID-name").innerText = pokemonName;
         var pokemonImgFront = data.sprites.front_default;
         var pokemonImgBack = data.sprites.back_default;
         var pokemonAlt = `No picture found of ${pokemonName}`;
+        var idBackImage = document.getElementById("back");
+        idBackImage.setAttribute("src", pokemonImgBack);
+        idBackImage.setAttribute("alt", pokemonAlt);
+        var idFrontImage = document.getElementById("front");
+        idFrontImage.setAttribute("src", pokemonImgFront);
+        idFrontImage.setAttribute("alt", pokemonAlt);
         var pokemonAllMoves = Array.from(data.moves);
         var pokemonFourMoves = chooseFourMoves(pokemonAllMoves);
         var pokemonFourMovesName = getNamesMovesArray(pokemonFourMoves);
+        var classMoves = Array.from(document.getElementsByClassName("moves"));
+        console.log(pokemonFourMovesName);
+        pokemonFourMovesName.forEach(function (move, index) {
+            console.log(index, move);
+            document.getElementsByClassName("moves")[index].innerHTML = move;
+        });
+
         var urlSpecies = data.species.url;
 
         var self = this;
@@ -103,11 +119,6 @@ fetch(urlPokemon)
 /*
 
 */
-
-
-
-
-
 
 
 //list of all pokemon names
