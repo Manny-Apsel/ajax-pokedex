@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url("images/background3.jpg");
 }
 
@@ -6,7 +6,8 @@ h1 {
     font-size: 55px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
-    color: yellow;
+    color: #FFCB05;
+    letter-spacing: 2px;
 }
 
 h2 {
@@ -15,68 +16,80 @@ h2 {
     font-size: 35px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
-    color: yellow;}
+    color: #FFCB05;
+    letter-spacing: 2px;
+}
 
 img {
-    width: 30%;
+    width: 40%;
     height: auto;
 }
 
 .moves {
-    font-size: 25px;
-    font-family: 'Scheherazade', serif;
-    color: darkslategrey;
-}
-
-.bg-light {
-    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Racing Sans One', cursive;
+    color: #2681EC;
+    text-shadow: 1px 1px black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 1.5px;
 }
 
 #go {
     min-width: 50px;
     border-radius: 8px;
-    background-color: #4CAF50; /* Green */
+    background-color: #3F65B0;
     border: none;
     text-shadow: 1px 1px black;
-    color: yellow;
+    color: #FFCB05;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 20px;
+    letter-spacing: 1.5px;
 }
 
 #ID-name {
     font-size: 30px;
     font-family: 'Racing Sans One', cursive;
-    text-shadow: 2px 2px black;
-    color: cornflowerblue;
+    text-shadow: 1px 1px black;
+    color: #2681EC;
+}
+
+#pokemonId {
+    font-size: 25px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 1px 1px black;
+    color: #2681EC;
 }
 
 #prevev {
     margin-right: 1.5px;
     margin-bottom: 3px;
-    min-width: 100px;
+    min-width: 125px;
     border-radius: 8px;
-    background-color: #4CAF50;
+    background-color: #92506C;
     border: none;
     text-shadow: 1px 1px black;
-    color: yellow;
+    color: #FFCB05;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 15px;
+    letter-spacing: 1.5px;
 }
 
 #nextev {
     margin-left: 1.5px;
     margin-bottom: 3px;
-    min-width: 100px;
+    min-width: 125px;
     border-radius: 8px;
-    background-color: #4CAF50;
+    background-color: #92506C;
     border: none;
     text-shadow: 1px 1px black;
-    color: yellow;
+    color: #FFCB05;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 15px;
+    letter-spacing: 1.5px;
 }
 
 #prevmon {
@@ -84,13 +97,14 @@ img {
     margin-top: 3px;
     min-width: 150px;
     border-radius: 8px;
-    background-color: #E84C3D;
+    background-color: #7A8497;
     border: none;
     text-shadow: 1px 1px black;
-    color: yellow;
+    color: #FFCB05;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 18px;
+    letter-spacing: 1.5px;
 }
 
 #nextmon {
@@ -98,16 +112,12 @@ img {
     margin-top: 3px;
     min-width: 150px;
     border-radius: 8px;
-    background-color: #E84C3D;
+    background-color: #7A8497;
     border: none;
     text-shadow: 1px 1px black;
-    color: yellow;
+    color: #FFCB05;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 18px;
-}
-
-#myModal .modal-content{
-    background-color: rgba(0,0,0,0);
-    border: none;
+    letter-spacing: 1.5px;
 }
