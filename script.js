@@ -1,3 +1,7 @@
+
+let urlLinkPokemonPrev;
+let urlLinkPokemonNext;
+
 async function fetchPokemonsList() {
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/?&limit=964");
     return await response.json();
@@ -44,11 +48,12 @@ function showPokemonData(data) {
     var pokemonFourMoves = chooseFourMoves(pokemonAllMoves);
     var pokemonFourMovesName = getNamesMovesArray(pokemonFourMoves);
     var classMoves = Array.from(document.getElementsByClassName("moves"));
-    console.log(pokemonFourMovesName);
     pokemonFourMovesName.forEach(function (move, index) {
-        console.log(index, move);
         document.getElementsByClassName("moves")[index].innerHTML = move;
     });
+}
+
+function returnUrlSpecies(data) {
     return data.species.url;
 }
 
@@ -81,65 +86,62 @@ function getNamesMovesArray(arrayMoves) {
     return names;
 }
 
-function fetchSpecies(url) {
-    fetch(url)
-        .then(function (response) {
-            return response.json()
-        })
+async function fetchSpecies(url) {
+    let response = await fetch(url);
+    return await response.json();
+}
+
+async function fetchEvolutionChain(url) {
+    let response = await fetch(url);
+    return await response.json();
+}
+
+function repeat(urlPokemon){
+    fetchPokemonData(urlPokemon)
         .then(function (data) {
-            console.log(data);
-            let urlEvolutionChain = data.evolution_chain.url;
-            document.getElementById("button1").addEventListener("click", function () {
-                fetchEvolutionChain(urlEvolutionChain);
-            })
+            showPokemonData(data);
+            let pokemonName = data.name;
+            var urlSpecies = returnUrlSpecies(data);
+            fetchSpecies(urlSpecies)
+                .then(function (data) {
+                    let urlEvolutionChain = data.evolution_chain.url;
+                    fetchEvolutionChain(urlEvolutionChain)
+                        .then(function (data) {
+                            if (pokemonName === data.chain.species.name){
+                                urlLinkPokemonPrev = "";
+                                urlLinkPokemonNext = data.chain.evolves_to[0].species.url.replace("-species","");
+                            }
+                            if (pokemonName === data.chain.evolves_to[0].species.name){
+                                urlLinkPokemonPrev = data.chain.species.url.replace("-species", "");
+                                urlLinkPokemonNext = data.chain.evolves_to[0].evolves_to[0].species.url.replace("-species","");
+                            }
+                            if (pokemonName === data.chain.evolves_to[0].evolves_to[0].species.name){
+                                urlLinkPokemonPrev = data.chain.evolves_to[0].species.url.replace("-species","");
+                                urlLinkPokemonNext = "";
+                            }
+                        })
+                })
         })
 }
 
-function fetchEvolutionChain(url) {
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        })
-}
-
-/*function fetchPokemon(url) {
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            document.getElementById("prevev").addEventListener("click", function () {
-                fetchSpecies(urlSpecies);
-            });
-            document.getElementById("nextev").addEventListener("click", function () {
-                fetchSpecies(urlspecies);
-            });
-            document.getElementById("prevmon").addEventListener("click", function () {
-                //code to go to prev pokemon
-            });
-            document.getElementById("nextmon").addEventListener("click", function () {
-                //code to go to next pokemon
-            })
-
-        });
-}*/
 
 document.getElementById("go").addEventListener("click", function () {
     var input = document.getElementById("input").value;
     fetchPokemonsList()
         .then(function (data) {
             let urlPokemon = returnUrlBasedOnIdOrName(input, data);
-            fetchPokemonData(urlPokemon)
-                .then(function (data) {
-                    var urlSpecies = showPokemonData(data);
-                })
+            repeat(urlPokemon)
         });
-
-
 });
+
+document.getElementById("prevev").addEventListener("click", function () {
+    repeat(urlLinkPokemonPrev);
+});
+
+document.getElementById("nextev").addEventListener("click", function () {
+    repeat(urlLinkPokemonNext);
+});
+
 
 /*
 
