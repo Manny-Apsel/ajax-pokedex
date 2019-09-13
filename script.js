@@ -1,6 +1,8 @@
 
-let urlLinkPokemonPrev;
-let urlLinkPokemonNext;
+let urlPrevEvolution;
+let urlNextEvolution;
+let urlPrevPokemon;
+let urlNextPokemon;
 let input = document.getElementById("input");
 
 async function fetchPokemonsList() {
@@ -98,6 +100,52 @@ async function fetchEvolutionChain(url) {
     return await response.json();
 }
 
+function checkPrevNextEvolution(pokemonName, data) {
+    switch (pokemonName) {
+        case data.chain.species.name:
+            urlPrevEvolution = "";
+            urlNextEvolution = data.chain.evolves_to[0].species.url.replace("-species","");
+            break;
+        case data.chain.evolves_to[0].species.name:
+            urlPrevEvolution = data.chain.species.url.replace("-species", "");
+            urlNextEvolution = data.chain.evolves_to[0].evolves_to[0].species.url.replace("-species","");
+            break;
+        case data.chain.evolves_to[0].evolves_to[0].species.name:
+            urlPrevEvolution = data.chain.evolves_to[0].species.url.replace("-species","");
+            urlNextEvolution = "";
+            break;
+    }
+}
+
+function returnPrevPokemonObj(data) {
+    var arrayPokemons = data.results;
+    var pokemon;
+    arrayPokemons.forEach(function (pokemon,index) {
+        if (pokemon.name === name){
+            return data.results[index-1];
+        }
+    })
+}
+
+function returnUrlPrevPokemon(name) {
+    let url = "";
+    fetchPokemonsList()
+        .then(function (data) {
+            console.log(data);
+            let pokemonObj = returnPrevPokemonObj(data);
+            console.log(pokemonObj.url);
+            url = pokemonObj.url;
+            return url;
+        });
+    return url;
+}
+
+function checkPrevNextPokemon(data) {
+    let nameFirstPokemonInEvolution = data.chain.species.name;
+    urlPrevPokemon = returnUrlPrevPokemon(nameFirstPokemonInEvolution);
+
+}
+
 function repeat(urlPokemon){
     fetchPokemonData(urlPokemon)
         .then(function (data) {
@@ -109,18 +157,8 @@ function repeat(urlPokemon){
                     let urlEvolutionChain = data.evolution_chain.url;
                     fetchEvolutionChain(urlEvolutionChain)
                         .then(function (data) {
-                            if (pokemonName === data.chain.species.name){
-                                urlLinkPokemonPrev = "";
-                                urlLinkPokemonNext = data.chain.evolves_to[0].species.url.replace("-species","");
-                            }
-                            if (pokemonName === data.chain.evolves_to[0].species.name){
-                                urlLinkPokemonPrev = data.chain.species.url.replace("-species", "");
-                                urlLinkPokemonNext = data.chain.evolves_to[0].evolves_to[0].species.url.replace("-species","");
-                            }
-                            if (pokemonName === data.chain.evolves_to[0].evolves_to[0].species.name){
-                                urlLinkPokemonPrev = data.chain.evolves_to[0].species.url.replace("-species","");
-                                urlLinkPokemonNext = "";
-                            }
+                            checkPrevNextEvolution(pokemonName, data);
+                            checkPrevNextPokemon(data);
                         })
                 })
         })
@@ -154,17 +192,20 @@ document.getElementById("go").addEventListener("click", function () {
 });
 
 document.getElementById("prevev").addEventListener("click", function () {
-    repeat(urlLinkPokemonPrev);
+    repeat(urlPrevEvolution);
 });
 
 document.getElementById("nextev").addEventListener("click", function () {
-    repeat(urlLinkPokemonNext);
+    repeat(urlNextEvolution);
 });
 
 document.getElementById("nextmon").addEventListener("click",function () {
-    let urlNextPokemon = nextPokemon();
-    repeat(urlNextPokemon)
-})
+
+});
+
+document.getElementById("prevmon").addEventListener("click",function () {
+    repeat(urlPrevPokemon);
+});
 
 
 /*
