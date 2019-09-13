@@ -9,6 +9,7 @@ async function fetchPokemonsList() {
 
 function returnUrlBasedOnIdOrName(input, data) {
     let regex = new RegExp(/\d{1,3}/);
+    input.toLowerCase();
     // als input nummer tussen 1-3 karakters is dan kun je meteen op zoek gaan naar de input
     if (regex.test(input) && parseInt(input) < 807) {
         url = data.results[parseInt(input) - 1].url;
@@ -31,10 +32,10 @@ async function fetchPokemonData(url) {
 
 function showPokemonData(data) {
     console.log(data);
-    var pokemonId = data.id;
-    document.getElementById("pokemonId").innerText += ` ${pokemonId}`;
+    var pokemonId = data.id
+    document.getElementById("pokemonId").innerText = `ID: ${pokemonId}`;
     var pokemonName = data.name;
-    document.getElementById("ID-name").innerText += ` ${pokemonName}`;
+    document.getElementById("ID-name").innerText = `Name: ${pokemonName}`;
     var pokemonImgFront = data.sprites.front_default;
     var pokemonImgBack = data.sprites.back_default;
     var pokemonAlt = `No picture found of ${pokemonName}`;
@@ -141,6 +142,11 @@ document.getElementById("prevev").addEventListener("click", function () {
 document.getElementById("nextev").addEventListener("click", function () {
     repeat(urlLinkPokemonNext);
 });
+
+document.getElementById("nextmon").addEventListener("click",function () {
+    let urlNextPokemon = nextPokemon();
+    repeat(urlNextPokemon)
+})
 
 
 /*
