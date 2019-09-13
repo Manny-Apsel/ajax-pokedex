@@ -1,2 +1,2 @@
 # ajax-pokedex
-## Link
+## [Link](https://manny-apsel.github.io/ajax-pokedex/index.html)
