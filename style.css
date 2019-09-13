@@ -1,0 +1,113 @@
+body{
+    background-image: url("images/background3.jpg");
+}
+
+h1 {
+    font-size: 55px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: yellow;
+}
+
+h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 35px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: yellow;}
+
+img {
+    width: 30%;
+    height: auto;
+}
+
+.moves {
+    font-size: 25px;
+    font-family: 'Scheherazade', serif;
+    color: darkslategrey;
+}
+
+.bg-light {
+    background-color: transparent;
+}
+
+#go {
+    min-width: 50px;
+    border-radius: 8px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 20px;
+}
+
+#ID-name {
+    font-size: 30px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: cornflowerblue;
+}
+
+#prevev {
+    margin-right: 1.5px;
+    margin-bottom: 3px;
+    min-width: 100px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 15px;
+}
+
+#nextev {
+    margin-left: 1.5px;
+    margin-bottom: 3px;
+    min-width: 100px;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 15px;
+}
+
+#prevmon {
+    margin-right: 1.5px;
+    margin-top: 3px;
+    min-width: 150px;
+    border-radius: 8px;
+    background-color: #E84C3D;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 18px;
+}
+
+#nextmon {
+    margin-left: 1.5px;
+    margin-top: 3px;
+    min-width: 150px;
+    border-radius: 8px;
+    background-color: #E84C3D;
+    border: none;
+    text-shadow: 1px 1px black;
+    color: yellow;
+    font-family: 'Racing Sans One', cursive;
+    text-align: center;
+    font-size: 18px;
+}
+
+#myModal .modal-content{
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
