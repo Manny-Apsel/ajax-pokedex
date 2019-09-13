@@ -1,27 +1,35 @@
+body{
+    background-image: url("images/background3.jpg");
+}
+
 h1 {
-    font-size: 50px;
+    font-size: 55px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
     color: yellow;
-
 }
 
 h2 {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 35px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
-    color: yellow;}#left {
-    font-family: 'Racing Sans One', cursive;
-}
+    color: yellow;}
 
 img {
-    width: 25%;
+    width: 30%;
     height: auto;
 }
 
-#dex {
-    padding-top: 50px;
+.moves {
+    font-size: 25px;
+    font-family: 'Scheherazade', serif;
+    color: darkslategrey;
+}
+
+.bg-light {
+    background-color: transparent;
 }
 
 #go {
@@ -33,11 +41,19 @@ img {
     color: yellow;
     font-family: 'Racing Sans One', cursive;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
+}
 
+#ID-name {
+    font-size: 30px;
+    font-family: 'Racing Sans One', cursive;
+    text-shadow: 2px 2px black;
+    color: cornflowerblue;
 }
 
 #prevev {
+    margin-right: 1.5px;
+    margin-bottom: 3px;
     min-width: 100px;
     border-radius: 8px;
     background-color: #4CAF50;
@@ -50,6 +66,8 @@ img {
 }
 
 #nextev {
+    margin-left: 1.5px;
+    margin-bottom: 3px;
     min-width: 100px;
     border-radius: 8px;
     background-color: #4CAF50;
@@ -62,6 +80,8 @@ img {
 }
 
 #prevmon {
+    margin-right: 1.5px;
+    margin-top: 3px;
     min-width: 150px;
     border-radius: 8px;
     background-color: #E84C3D;
@@ -74,6 +94,8 @@ img {
 }
 
 #nextmon {
+    margin-left: 1.5px;
+    margin-top: 3px;
     min-width: 150px;
     border-radius: 8px;
     background-color: #E84C3D;
@@ -83,4 +105,9 @@ img {
     font-family: 'Racing Sans One', cursive;
     text-align: center;
     font-size: 18px;
+}
+
+#myModal .modal-content{
+    background-color: rgba(0,0,0,0);
+    border: none;
 }
