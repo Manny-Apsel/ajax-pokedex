@@ -11,8 +11,8 @@ h1 {
 }
 
 h2 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 9px;
+    padding-bottom: 8px;
     font-size: 35px;
     font-family: 'Racing Sans One', cursive;
     text-shadow: 2px 2px black;
@@ -38,7 +38,7 @@ img {
 #go {
     min-width: 50px;
     border-radius: 8px;
-    background-color: #3F65B0;
+    background-color: #2EABFF;
     border: none;
     text-shadow: 1px 1px black;
     color: #FFCB05;
