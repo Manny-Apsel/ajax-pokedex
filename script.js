@@ -1,6 +1,7 @@
 
 let urlLinkPokemonPrev;
 let urlLinkPokemonNext;
+let input = document.getElementById("input");
 
 async function fetchPokemonsList() {
     let response = await fetch("https://pokeapi.co/api/v2/pokemon/?&limit=964");
@@ -125,12 +126,29 @@ function repeat(urlPokemon){
         })
 }
 
+fetchPokemonsList()
+    .then(function (data) {
+        var arrayPokemonList = Array.from(data.results);
+        arrayPokemonList.forEach(function (pokemon) {
+            var option = document.createElement("option");
+            option.value = pokemon.name;
+            document.getElementById("pokemonList").appendChild(option);
+        })
+    });
+
+
+input.addEventListener("keydown",function (event) {
+    if (event.keyCode === 13){
+        event.preventDefault();
+        document.getElementById("go").click();
+    }
+});
 
 document.getElementById("go").addEventListener("click", function () {
-    var input = document.getElementById("input").value;
+    let inputText = input.value;
     fetchPokemonsList()
         .then(function (data) {
-            let urlPokemon = returnUrlBasedOnIdOrName(input, data);
+            let urlPokemon = returnUrlBasedOnIdOrName(inputText, data);
             repeat(urlPokemon)
         });
 });
