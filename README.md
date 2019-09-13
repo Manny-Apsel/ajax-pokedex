@@ -23,7 +23,7 @@ How to use:
 
     just type in a pokémon name or ID, and find the moves of that certain pokémon
     
-    by keep clicking the button, the moves will show 4 random Moves by every click
+    by keep clicking the "Go" button, the moves will show 4 random Moves by every click
     
 Who did what?
 
